@@ -3,11 +3,8 @@ from os import path
 from wordcloud import WordCloud
 from PIL import Image 
 
-
-i
 d = path.dirname(__file__)
 dir_name=path.dirname(__file__)
-
 
 ##    text=f.read()
 # Read the whole text.
