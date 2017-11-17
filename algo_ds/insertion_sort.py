@@ -1,17 +1,19 @@
-import numpy as np
+#
+from sys import stdin,stdout
+import array
 def insertion_sort(arr):
-    i=int(0)
-    j=(int(1))
+  # j=(int(1))
     key=0    
-    while (i<len(arr)):
+    for i in range(len(arr)):
         key=arr[i]
-        print(i)
-        while(j>=0 and arr[j]<key):
-            arr[j-1]=arr[j]
+        #print(i)
+        j=i-1
+        while(j>=0 and arr[j]>key):
+            arr[j+1]=arr[j]
             j=j-1
-    print (i)
-    i=i+1
-    arr[j]=key
+  #  print (i)
+    #i=i+1
+        arr[j+1]=key
     return (arr)
         
         
@@ -23,8 +25,9 @@ def insertion_sort(arr):
 
 if __name__=='__main__':
 
-    arr=[1,2,223,45,34,788,897,21,45]
+    arr=[69,1,2,223,45,34,788,897,21,45]
     #print(len(arr))
-    arr=np.array(arr,dtype=int)
+    arr=array.array('i',arr)
     arr=insertion_sort(arr)
-    print (arr)
+    for i in arr:
+        print (i,"\t")
