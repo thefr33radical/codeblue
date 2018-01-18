@@ -1,0 +1,17 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Dec  6 16:42:42 2017
+
+@author: gowtham
+"""
+
+matrix=[[1,2,3],[4,3,2,6,1],[8,2,1,7,8]]
+
+for i in matrix[[0]]:
+       
+    
+    if(matrix[[1]].find(i)):
+        if(matrix[[2]].find(i)):
+            print("found",i)
+    
+    
