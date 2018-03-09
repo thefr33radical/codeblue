@@ -12,3 +12,5 @@ Find the max key from a hash map
 k=(max(dict.keys(), v=(lambda i:dict[i]))
 
 '''
+
+print(max(ord('a'),ord('4')))
