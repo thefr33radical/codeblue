@@ -9,11 +9,9 @@ def count_sort(arr,exp):
         counter[z]=counter[z]+1
        # print (i)
        # print(counter)
-        
     #print (counter)
     for i in range(1,len(counter)):
         counter[i]=counter[i-1]+counter[i]
-        
     #print(counter)
     i=len(arr)-1
     while(i>=0):
