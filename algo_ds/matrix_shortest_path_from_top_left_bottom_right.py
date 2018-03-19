@@ -2,6 +2,9 @@
  to the right-bottom most element, 
  such that at each step the value is multiplied with the previous value,
  the final value should have least number of zeros.  
+ 
+ 
+ incomplete
  '''
  
  
@@ -39,10 +42,10 @@ for i in range(1,3):
 for j in range(1,3):
     mat[0][j]=mat[0][j-1]*cost[0][j]
    
-print(mat)
+#print(mat)
 for i in range(1,3):
     for j in range(1,3):
          mat[i][j]=min(mat[i-1][j],mat[i-1][j-1],(mat[i][j-1]))*cost[i][j]
 print(mat)
-        
+#        
         
