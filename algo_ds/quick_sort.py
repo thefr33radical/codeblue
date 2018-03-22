@@ -1,10 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Oct 20 17:26:34 2017
-
-@author: gowtham
-"""
 
 import numpy
 def swap(a,b):
@@ -14,14 +7,16 @@ def swap(a,b):
     return a,b
 
 def part(arr,low,high):
-    pivot=arr[low]
+    pivot=arr[int(low)]
     i=int(low+1)
     j=int(high)
-    print (i)
+   # print (i,j,low,high)
+    
     while(1):
-        while(arr[i]<pivot):
+        while(arr[i]<pivot and i<j):
             i=i+1
-        while(arr[j]>=pivot):
+           # print(i)
+        while(arr[j]>=pivot and j>=i):
             j=j-1
         if(i<j):
            arr[i],arr[j]= swap(arr[i],arr[j])
@@ -29,22 +24,22 @@ def part(arr,low,high):
             break
 
     print(arr)
-    arr[low]=arr[i]
-    arr[i]=pivot
+    arr[low]=arr[j]
+    arr[j]=pivot
     
-    return i
+    return j
 
 
 def sort(arr,low,high):
     if(low<high):
         pivot=part(arr,low,high)
-        print ("pivot",pivot)
+       # print ("pivot",pivot)
         sort(arr,low,pivot-1)
         sort(arr,pivot+1,high)
     
     
 if __name__=="__main__":
-    arr=numpy.asarray([23,45,67,76,34,2,12,68],dtype=int)
+    arr=[23,45,67,76,34,2,12,68]
     sort(arr,0,len(arr)-1)
     print(arr)
 

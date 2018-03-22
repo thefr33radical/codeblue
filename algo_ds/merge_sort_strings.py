@@ -35,7 +35,7 @@ def sort(string,low,mid,high):
     for i in range(low,high+1):
         string[i]=temp[k]
         k+=1
-    print(string,temp,"low ",low," mid ",mid," high ",high)
+    #print(string,temp,"low ",low," mid ",mid," high ",high)
     
 
 def split(string,low,high):
@@ -54,12 +54,13 @@ def compute(string):
 
 if __name__=="__main__":
     #string="124356387"
-    string="9657842234"
+    string="qwertybduiop"
     l=list(string)
-    l=list(map(int,l))
+    #l=list(map(int,l))
     #print(l)
     #print(l)
     compute(l)
   #  print(string)
+    print(l)
 
 
