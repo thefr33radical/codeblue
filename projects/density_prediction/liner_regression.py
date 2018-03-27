@@ -1,13 +1,10 @@
 from sklearn import linear_model
-from sklearn.ensemble import RandomForestClassifier
 import pandas as pd
 from sklearn.metrics import mean_squared_error,r2_score
-from sklearn.metrics import accuracy_score
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 import sklearn
 import os
-import numpy as np
 import matplotlib.pyplot as plt
 from pandas import scatter_matrix
 
