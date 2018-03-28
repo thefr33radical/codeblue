@@ -1,69 +1,52 @@
-#include <iostream>
+// implementation of randomized quick sort using STL
+// TC= O(nlogn) --> O(n)2
+
+
+
 #include<bits/stdc++.h>
 using namespace std;
 
-class qs
-{
+int sorter(vector<int>&arr,int low,int high)
+{   int pivot=arr[low];
+    int i=low+1;
+    int j=high;
 
-    public:
+    while(1)
+    {   while(arr[i]<pivot && i <= j)
+        i++;
+        while(arr[j]>=pivot && j>=i)
+        j--;
 
-	vector<int> part(vector<int> &arr,int low,int high)
-	{	if(low<high)
-		{ int pivot =search(arr,low,high);
-           // cout<<"\n"<<pivot<<"\n";
-			part(arr,   low,pivot-1);
-			part(arr,pivot+1,high);
-		}
-	//	cout<<"\n";
-	//	for(int i=0;i<arr.size();i++)
-     //       cout<<arr[i]<<" ";
-     // cout<<"\n";
-        return arr;
-	}
+        if(i<j)
+        {   int temp=arr[i];
+            arr[i]=arr[j];
+            arr[j]=temp;
+      }
+      if(i>=j)
+        break;
+    }
+    arr[low]=arr[j];
+    arr[j]=pivot;
+    return j;
 
-	int search(vector<int>&arr, int low, int high)
-	{
-		int i=low+1;
-		int j=high;
-		int temp;
-		int p=arr[low];
-
-		while(1)
-		{	while(i<j &&arr[i]<=p) //  both the conditions are critical
-			i++;
-			while(arr[j]>=p && j>=i) //  both the conditions are critical
-			j--;
-
-			if(i<= j)
-			{	temp=arr[i];
-				arr[i]=arr[j];
-				arr[j]=temp;
-				i++;
-				j--;
-			}
-			else if(i>=j)
-				break;
-		}
-
-		arr[low]=arr[j];
-		arr[j]=p;
-        cout<<arr[j]<<"\t "<<i;
-        cout<<"\n";
-		return j;
-	}// return j rightmost val
-
-};
+}
 
 
+void compute(vector<int>&arr,int low,int high)
+{   //int pivot=0;
+    if(low<high)
 
-int main() {
-    int a[]={2,34,12,45,6,3,76,8};
-	vector<int>ar(a,a + sizeof(a) / sizeof(int));
-	qs *t=new qs();
-	ar=t->part(ar,0,ar.size()-1);
-    for(int i=0;i<ar.size();i++)
-        cout<<ar[i]<<" ";
+    {   int pivot=sorter(arr,low,high);
+        compute(arr,low,pivot-1);
+        compute(arr,pivot+1,high);
+   }
+}
 
-	// your code goes here
-	return 0;
+int main()
+{   int a[]={2,4,5,71,45,8};
+    vector<int> arr(a,a+sizeof(a)/sizeof(int));
+    compute(arr,0,arr.size()-1);
+    for(i:arr)
+    cout<<i<<" ";
+return 0;
 }
