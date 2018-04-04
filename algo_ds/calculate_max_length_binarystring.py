@@ -2,6 +2,8 @@
  find maximum substring length with equal number of 0’s and 1’s.
 '''
 
+#T(C)=O(n!) naive method
+
 def count_0(arr):
     count=0
     for i in arr:
