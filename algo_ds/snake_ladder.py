@@ -3,6 +3,8 @@ Given a snake & ladder board with only ladders and no snakes, find the minimum t
 Follow up question – include snakes on the board and find the same.
 
 '''
+
+#T(C)=O(N) where n is the number of squares in snake and ladder
 from collections import deque
 class node:
     def __init__(self):
