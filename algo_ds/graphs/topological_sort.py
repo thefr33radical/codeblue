@@ -1,3 +1,6 @@
+#kahns algorithm : T(C)=O(V+E)
+
+
 from collections import defaultdict
 class graph(object):
     def __init__(self,v):
