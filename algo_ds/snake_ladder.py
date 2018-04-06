@@ -15,7 +15,7 @@ def find_min_path(mat):
     visited=[False for i in range(len(mat)) ]
     #print(visited,mat)
     
-    
+        
     q=deque()
     initial=node()
     initial.v=0
