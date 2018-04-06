@@ -33,3 +33,10 @@ def compute():
 if __name__=="__main__":
     compute()
 '''
+
+
+'''
+5.
+sorted(list,key=func)
+https://www.programiz.com/python-programming/methods/built-in/sorted
+'''
