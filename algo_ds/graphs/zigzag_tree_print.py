@@ -1,8 +1,13 @@
 '''
-Zig Zag Traversal
+Zig Zag Traversal for any type of tree
 
 #Tree
 T(C)=O(E+V)
+
+
+1. Add edges into ajacency list
+2. Convert into level ordered list.
+3. Print list in reverse order if even
 
 '''
 from collections import defaultdict
@@ -18,6 +23,21 @@ def traverse(obj,src,x):
     q=[]
     q.append([src,0])
     levls=defaultdict(list)
+    
+    stck=[]
+  
+    '''  print(obj.adj)
+    for i in range(len(obj.adj)):
+        for j in obj.adj[i]:
+            if(i%2!=0):
+                stck.append(j)
+            else:
+                print(j)
+        while(stck):
+            print(stck.pop())
+            
+            '''
+    
     
     while(q):
         temp=q.pop(0)
