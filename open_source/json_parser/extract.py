@@ -17,7 +17,7 @@ Result JSON OBJECT to CSV or DATAFRAME can be converted in one more step.
 
 import json
 #obj=dict()
-pathname="/home/kuliza287/Dynamic_Credit_Model/cibil_response.json"
+pathname="/pathname/file.json"
 def extract(key,value):
     if(type(value)==str):
         result = "{'"+key+"' : '"+value+"'}"
