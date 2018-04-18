@@ -16,24 +16,28 @@ def add_node(obj,left,right):
 def height(obj):
     if(obj):
         if(obj.left is None and obj.right is None):
-            print(0,obj.val)
+            #print(0,obj.val)
             return 0
     
         else:
             x=(1+max(height(obj.left),height(obj.right)))
-            print(x,obj.val)
+            #print(x,obj.val)
             return x
     else:
         return 0
         
 def diameter(obj):
     if(obj):
-        if(obj.left is None and obj.right is None):
-            print(0,obj.val)
-            return 0
-        dm=max(height(obj.left)+height(obj.right)+1,max(diameter(obj.left),diameter(obj.right)))
-        print(obj.val,dm)
-        return dm
+        
+        rdm=diameter(obj.right)
+        ldm=diameter(obj.left)
+        
+        lht=height(obj.left)
+        rht=height(obj.right)
+        
+        x= max(lht+rht+1,max(ldm,rdm))
+        print(obj.val,x)
+        return x
     else:
         return 0
         
