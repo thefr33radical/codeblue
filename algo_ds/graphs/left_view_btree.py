@@ -1,6 +1,13 @@
 '''
 Left view of a binary btree
 
+Algorithm:
+1. Run BFS O(E+V)
+2. Constuct level Order adj list O(E+V)
+3. Print left most node in  each level O(V)
+
+T(C)=O(E+V)+O(E+V)+O(V)
+
 '''
 from collections import defaultdict
 

@@ -1,7 +1,11 @@
 '''
-Diameter of Btree
+Height of a btree
+DFS
 T(C)=O(V+E)
+
 '''
+
+
 class tree(object):
     def __init__(self,v):
         self.left=None
@@ -23,17 +27,6 @@ def height(obj):
             x=(1+max(height(obj.left),height(obj.right)))
             print(x,obj.val)
             return x
-    else:
-        return 0
-        
-def diameter(obj):
-    if(obj):
-        if(obj.left is None and obj.right is None):
-            print(0,obj.val)
-            return 0
-        dm=max(height(obj.left)+height(obj.right)+1,max(diameter(obj.left),diameter(obj.right)))
-        print(obj.val,dm)
-        return dm
     else:
         return 0
         
@@ -60,8 +53,7 @@ def compute():
     
     obj6.left=obj7
     obj7.left=obj8
-    #print(height(obj))
-    print(diameter(obj))
+    print(height(obj))
     
 if __name__=="__main__":
     compute()
