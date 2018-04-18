@@ -9,17 +9,7 @@ class Graph(object):
 
 def compute():
     
-    d=defaultdict(list)
-    l=[1,2,3,4,5,6]
-    
-    for i in range(16):
-        if(i in l):
-            d[i].append(i)
-            d[i].append(i*2)
-        else:
-            pass
-        
-    print(d)
+  
         
     
 
