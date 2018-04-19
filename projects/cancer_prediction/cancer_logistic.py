@@ -6,7 +6,13 @@ dataset=pd.read_csv("data/cancer.csv")
 cancer_type=dataset.iloc[:,-1:]
 cancer_features=dataset.iloc[:,:-1]
 
-cancer_type=s.fit().transform(cancer_type)
-print(cancer_type)
+scaler=s(copy=True, with_mean=True, with_std=True)
+f=scaler.fit_transform(cancer_features)
+
+#y= lambda x:  i+x for i in scaler.mean_
+
+print(y)
+
+
 
 
