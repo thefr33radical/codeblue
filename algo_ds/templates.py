@@ -75,3 +75,11 @@ def compute():
     obj2.right=obj6
 
 '''
+
+'''
+Sorting list of tuples/lists/custom objects 
+
+https://www.pythoncentral.io/how-to-sort-a-list-tuple-or-object-with-sorted-in-python/
+
+
+'''
