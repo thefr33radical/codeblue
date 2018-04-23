@@ -43,7 +43,7 @@ https://www.programiz.com/python-programming/methods/built-in/sorted
 
 '''
 6.
-Binary tree Node:
+Unweighted Binary tree template:
 
 class tree(object):
     def __init__(self,v):
@@ -77,9 +77,41 @@ def compute():
 '''
 
 '''
+7.
 Sorting list of tuples/lists/custom objects 
 
 https://www.pythoncentral.io/how-to-sort-a-list-tuple-or-object-with-sorted-in-python/
 
+'''
 
+'''
+8. Unweighted Graph template:
+
+class graph(object):
+    def __init__(self,vertex):
+        self.adj=defaultdict(list)
+        self.ver=vertex
+        
+def add_edge(obj,u,v):
+        obj.adj[u].append(v)
+        
+def compute():
+    obj=graph(5)
+    
+    add_edge(obj,0, 1)
+    add_edge(obj,0, 2)
+    add_edge(obj,0, 3)
+    #add_edge(obj,1, 2)
+    #add_edge(obj,2, 0)
+   # add_edge(obj,2, 3)
+    add_edge(obj,3, 4)
+    add_edge(obj,4, 3)
+    add_edge(obj,4, 8)
+    add_edge(obj,2, 5)
+    #add_edge(obj,0, 5)
+    
+   
+   
+if __name__=="__main__":
+    compute()
 '''
