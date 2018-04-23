@@ -11,7 +11,7 @@ f=scaler.fit_transform(cancer_features)
 
 #y= lambda x:  i+x for i in scaler.mean_
 
-print(y)
+#print(y)
 
 
 
