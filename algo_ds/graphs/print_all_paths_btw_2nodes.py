@@ -1,5 +1,5 @@
 '''
-All paths beteeen 2 nodes
+Print all paths beteeen 2 nodes
 T(C)=Exponential
 Algorithm : DFS for each path
 '''
