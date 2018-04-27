@@ -1,4 +1,5 @@
 #include <iostream>
+#include<bits/stdc++.h>
 #include<vector>
 using namespace std;
 
@@ -18,7 +19,7 @@ void sorter(vector<int>&arr,int low,int mid,int high){
 			start2+=1;
 		}
 	}
-	
+
 	while(start1<=mid)
 	{	temp.push_back(arr[start1]);
 		start1+=1;
@@ -30,14 +31,14 @@ void sorter(vector<int>&arr,int low,int mid,int high){
 	int k=0;
 	for(auto i=low;i<=high;i++)
 		arr[i]=temp[k++];
-		
+
 	// Mistake when copying back copy arr[low]~arr[high]=temp[0]~temp[size]
-		
+
 	for(auto i:arr)
 		cout<<i<<" ";
-		
+
 	cout<<" low: "<<low<<" mid "<<mid<<" high "<<high<<endl ;
-	
+
 }
 
 
@@ -47,7 +48,7 @@ void merge(vector<int>& arr,int low,int high)
 		merge(arr,low,mid);
 		merge(arr,mid+1,high);
 		sorter(arr,low,mid,high);
-	
+
 	}
 }
 
@@ -55,12 +56,12 @@ void merge(vector<int>& arr,int low,int high)
 int main() {
 	// your code goes here
 	vector<int>arr={1,4,3,6,6,3,8,23,4};
-	
+
 	merge(arr,0,arr.size());
 	for(auto i:arr)
 		cout<<i;
 
-	
-	
+
+
 	return 0;
-} 
+}
