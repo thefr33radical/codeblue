@@ -84,7 +84,7 @@ class qs
 			while(arr[j]>=p && j>=i) //  both the conditions are critical
 			j--;
 
-			if(i<= j)
+			if(i< j)
 			{	temp=arr[i];
 				arr[i]=arr[j];
 				arr[j]=temp;
@@ -96,7 +96,7 @@ class qs
 		}
 
 		arr[low]=arr[j];
-		arr[j]=p;
+		arr[j]=p;	
         cout<<arr[j]<<"\t "<<i;
         cout<<"\n";
 		return j;
@@ -118,10 +118,4 @@ int main() {
 	return 0;
 }
 
-	vector<int>arr={2,34,12,45,6,3,76,8};
-	qs *a=new qs();
-	a->part(arr,0,arr.size()-1);
-
-	// your code goes here
-	return 0;
-}
+	

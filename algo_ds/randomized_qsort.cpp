@@ -7,7 +7,7 @@
 using namespace std;
 
 int picker(vector<int>&arr,int low,int high)
-{
+{   //critical error region
     int r=(rand()%(high -low))+low;
     int temp=arr[r];
     arr[r]=arr[low];
@@ -33,6 +33,7 @@ int picker(vector<int>&arr,int low,int high)
               break;
      }
 
+     //error region  j needs to be swapped with pivot/arr[low] & vice versa
      arr[low]=arr[j];
      arr[j]=pivot;
      return j;
@@ -42,6 +43,7 @@ int picker(vector<int>&arr,int low,int high)
 void partitioner(vector<int>&arr,int low,int high)
 {   if(low<high){
     int pivot=picker(arr,low,high);
+    //error region where pivot is already sorted so other elements needs to be sorted
     partitioner(arr,low,pivot-1);
     partitioner(arr,pivot+1,high);
     }
@@ -54,7 +56,7 @@ int main()
     int a[]={2,4,5,71,45,8};
     vector<int> arr(a,a+sizeof(a)/sizeof(int));
     partitioner(arr,0,arr.size()-1);
-    for(i:arr)
+    for(auto i:arr)
     cout<<i<<" ";
 
 return 0;
