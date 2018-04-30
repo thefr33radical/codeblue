@@ -3,23 +3,35 @@ class node(object):
     def __init__(self,value,ptr):
         self.val=value
         self.next=None
+        
+        
+def find_mid(head):
+    temp=head
+    
+    if(temp.next)
+    
+    while(temp.next.next):
+        slo=temp.next
+        fast=(temp.next).next
+        temp=slo
+    
+    print(slo.val,fast.val)
 
 
 def compute():
     head=node(4,None)
-    g=[node(0,None)]*10
-    for i in range(len(g)-1):
-        g[i].val=random.randint(1,500)
+    g=[]
+    prev=head
+    for i in range(10):
         
-        g[i].next=g[i+1]
-        #print(g[i].val)
-    g[len(g)-1].next=None
+        g=node(random.randint(1,500),None)
+        prev.next=g
+        prev=g
+        
+      
     
-    
-    head.next=g[0]
-    
-    temp=g[0]
-    
+   
+    temp=head
     while(temp):
         print(temp.val,temp.next)
         temp=temp.next
