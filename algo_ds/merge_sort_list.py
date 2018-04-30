@@ -5,18 +5,29 @@ class node(object):
         self.next=None
         
         
-def find_mid(head):
-    temp=head
+def find_mid(head,tail):
+    sloptr=head
+    fastptr=head
     
-    if(temp.next)
+    if(sloptr and fastptr is None):
+        return None
+        
+    if(fastptr is None):
+        return sloptr
     
-    while(temp.next.next):
-        slo=temp.next
-        fast=(temp.next).next
-        temp=slo
-    
-    print(slo.val,fast.val)
+    while(sloptr.next):
+        sloptr=sloptr.next
+        if(fastptr.next):
+            if((fastptr.next).next):
+                fastptr=(fastptr.next).next
+        else:
+            return sloptr
+                
+                
 
+
+def ms(head,low,high):
+    mid=find_mid(low,high)
 
 def compute():
     head=node(4,None)
