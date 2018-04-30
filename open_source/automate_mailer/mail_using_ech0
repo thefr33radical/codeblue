@@ -1,0 +1,3 @@
+#if not installed
+#sudo apt-get install mailutils
+echo "message contents" | mail -s "testing" youremail@email.com 

@@ -1,0 +1,11 @@
+
+
+Contributors : Thefreeradical
+
+********************************************************************************
+Using simplehttp server contents of the folder can be shared.quickly across LAnetwork
+python 3X command
+
+python -m http.server 
+Access using localhost:8000 defaults
+**********************************************************************************
