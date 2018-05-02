@@ -17,13 +17,21 @@ def check_symmetry(obj1,obj2):
         return 1
     
     if(obj1 and obj2):
-        print("left",obj1.val,"right",obj2.val)
+        #print("left",obj1.val,"right",obj2.val)
         if(obj1.val==obj2.val):
-            print("#left",obj1.val,"#right",obj2.val)
-            return(check_symmetry(obj1.left,obj2.right) and check_symmetry(obj1.right,obj2.left))
-            
-        
+            #print("#left",obj1.val,"#right",obj2.val)
+            x=check_symmetry(obj1.left,obj2.right) 
+            y= check_symmetry(obj1.right,obj2.left)
+            z=x and y
+            print(x,y,z,"Exit : left",obj1.val,"right",obj2.val)
+            return z
+    #print("Exit : left",obj1.val,"right",obj2.val) 
+    if(obj1):
+        print("Exit mismatch",obj1.val)
+    if(obj2):
+        print("Exit mismatch",obj2.val)
     return -1
+    
             
   
         
@@ -44,7 +52,7 @@ def compute():
     obj8=tree(10)
     obj9=tree(41)  
     obj10=tree(41)  
-    obj11=tree(41)  
+    obj11=tree(0)  
         
     
     obj.left=obj1
