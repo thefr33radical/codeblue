@@ -15,7 +15,7 @@ print(os.getcwd())
 
 n=["Status of existing checking account","Duration in month","Credit history","Purpose","Credit amount","Savings account/bonds","Present employment since","Installment rate","Personal status and sex","Other debtors guarantors ","Present residence since ","Property ","Age in years ","Other installment plans ","Housing ","Number of existing credits at this bank","Job","Number of people being liable to provide maintenance","Telephone ","foreign worker"]
 dataset=pd.read_csv('dataset/german_credit_datset/german.data-numeric.txt',index_col=None,names=n,sep="  ")
-
+            
 
 #dataset2=pd.read_csv('data/test.csv',index_col=None)
 #ddel(dataset[[0]])
