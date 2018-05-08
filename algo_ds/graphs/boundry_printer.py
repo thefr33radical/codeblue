@@ -1,4 +1,9 @@
+'''
+Boundry print a given binary tree:
+T(C)=O(E+V)
+Algorithm : BFS with edge case
 
+'''
 class tree(object):
     def __init__(self,v):
         self.left=None
