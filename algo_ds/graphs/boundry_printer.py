@@ -21,30 +21,33 @@ def boundry(obj):
     q.append(obj)
     leftmost=0
     rightmost=0
+    print(obj.val)
     while(q):
         leftmost=0
         v=q.pop(0)
-        print(obj.val)
+       # print(v.val)
         if(isleaf(v)):
-            print(obj.val)
-                 
+            print("leaf",v.val)
+            continue
         else:
             if(v.left):
-                if(leftmost==0):
-                    print("left",v.left.val)
+                if(leftmost==0 and not isleaf(v.left)):
+                    print("left",v.left.val)                   
                     q.append(v.left)
                     leftmost=1
                 else:
                     q.append(v.left)
                     
             if(v.right):
-                if(leftmost==0):
+                if(leftmost==0 and not isleaf(v.right)):
                     print(v.right.val)
                     q.append(v.right)
                     leftmost=1
                 else:
                     q.append(v.right)
-            
+        
+            if(leftmost!=0 and not isleaf(q[len(q)-1])):
+                print("right",q[len(q)-1].val)
 
         
 def compute():
