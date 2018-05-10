@@ -45,7 +45,7 @@ https://www.programiz.com/python-programming/methods/built-in/sorted
 6.
 Unweighted Binary tree template:
 
-class tree(object):
+class Tree(object):
     def __init__(self,v):
         self.left=None
         self.right=None
@@ -56,15 +56,14 @@ def add_node(obj,left,right):
         obj.right=right
         
 def compute():
-    obj=tree(1)
-    obj1=tree(2)
-    obj2=tree(3)
-    obj3=tree(4)
-    obj4=tree(5)
-    obj5=tree(6)  
-    obj6=tree(7)  
-        
-    
+    obj=Tree(1)
+    obj1=Tree(2)
+    obj2=Tree(3)
+    obj3=Tree(4)
+    obj4=Tree(5)
+    obj5=Tree(6)  
+    obj6=Tree(7)  
+            
     obj.left=obj1
     obj.right=obj2
     
@@ -73,7 +72,6 @@ def compute():
     
     obj2.left=obj5
     obj2.right=obj6
-
 '''
 
 '''
