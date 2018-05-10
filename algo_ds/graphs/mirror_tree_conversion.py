@@ -1,3 +1,8 @@
+'''
+T(C)=O(n)
+Algorithm :Preorder Traversal
+'''
+
 class Tree(object):
     def __init__(self,v):
         self.left=None
@@ -7,10 +12,7 @@ class Tree(object):
 def add_node(obj,left,right):
         obj.left=left
         obj.right=right
-        
-        
-        
-        
+          
 def conversion(obj):
     
     if(obj is not None):
@@ -18,6 +20,7 @@ def conversion(obj):
         temp=obj.left
         obj.left=obj.right
         obj.right=temp
+        
         print(obj.val)
         conversion(obj.left)
         conversion(obj.right)
