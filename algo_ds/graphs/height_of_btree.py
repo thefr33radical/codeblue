@@ -5,7 +5,6 @@ T(C)=O(V+E)
 
 '''
 
-
 class tree(object):
     def __init__(self,v):
         self.left=None
