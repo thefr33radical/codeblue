@@ -1,15 +1,14 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Mon Oct 30 19:32:21 2017
 
-@author: gowtham
-"""
 import itertools
 
+l=[]
+s=""
+for i in s:
+    l.append(i)
 
-x=(itertools.permutations(['g','o','w','t','h','a','m','n','a','y','a','k']))
+x=(itertools.permutations(l))
 for i in x:
     print(i)
     
-print (help(itertools))
-ls
+#print (help(itertools))
