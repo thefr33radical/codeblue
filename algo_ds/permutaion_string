@@ -4,7 +4,7 @@
 import itertools
 
 def compute():
-    name="manjushree"
+    name=""
     output=list(itertools.permutations([x for x in name]))
     print(output)
 
