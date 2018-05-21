@@ -1,21 +1,13 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
-'''
-Regression Algorithms compirsing of SVR, Polynomial, Linear, Ridge, Elasticnet, Lasso.
-Input Parameters for each algorithm : String(moddel_name), pandas.dataFrame(x_train_features),pandas.dataFrame(y_train_features), pandas.dataFrame(x_test_features), pandas.dataFrame(y_test_features)
-Output : MeanSquaredError and R-Squared
-'''
+
 from sklearn import svm
 from sklearn.metrics import mean_squared_error, r2_score
 from sklearn import linear_model
 from sklearn.preprocessing import PolynomialFeatures as poly
 import traceback
 import pandas as pd
-import os
-import traceback
-import multiprocessing as proc
-from sklearn.preprocessing import StandardScaler
-
+from sklearn.model_selection import KFold
+from sklearn.model_selection import cross_val_score
+import numpy as np
 
 class Compute(object):
 
@@ -28,7 +20,6 @@ class Compute(object):
         self.path = ""
 
     def split_dataset(self):
-            # Split training data into training and test set
         self.train_x = self.dataset.iloc[:int(0.8 * len(self.dataset)),
                                          :4]
         self.train_x.append(self.dataset.iloc[:int(0.8
@@ -41,13 +32,12 @@ class Compute(object):
                                          4]
         self.test_y = self.dataset.iloc[:int(0.2 * len(self.dataset)),
                                         4]
-        print (self.train_x, self.test_x, self.train_y, self.test_y)
         return
 
    
     def data_loader(self):
         try:
-            self.path = "/home/kuliza287/codes/drive/projects/accuracy_tuning_methods/dataset/german.data-numeric.txt"
+            self.path = input()
             self.dataset = pd.read_csv(
                 self.path,
                 index_col=None,
@@ -135,7 +125,19 @@ class Algorithms(object):
         train_y,
         test_y,
     ):
+        
+        dataset1=pd.concat([train_x,test_x])
+        dataset2=pd.concat([train_y,test_y])
+        #dataset=pd.concat(dataset1,dataset2,axis=1)
+        kf = KFold(n_splits=10)
         model = svm.SVR(kernel='rbf')
+        scores = cross_val_score(model, dataset1, dataset2, cv=kf)
+
+        avg_score = np.mean(scores)
+        print("Kfold score ",avg_score)
+              
+        
+        
         model.fit(train_x, train_y)
         pred = model.predict(test_x)
         self.print_score(
@@ -239,6 +241,18 @@ class Algorithms(object):
         train_y,
         test_y,
     ):
+        
+        
+        
+        dataset1=pd.concat([train_x,test_x])
+        dataset2=pd.concat([train_y,test_y])
+        #dataset=pd.concat(dataset1,dataset2,axis=1)
+        kf = KFold(n_splits=10)
+        model = linear_model.ElasticNet(alpha=1)
+        scores = cross_val_score(model, dataset1, dataset2, cv=kf)
+
+        avg_score = np.mean(scores)
+        print("Kfold score ",avg_score)
         model = linear_model.ElasticNet(alpha=1)
         model.fit(train_x, train_y)
         pred = model.predict(test_x)
@@ -279,5 +293,5 @@ if __name__ == '__main__':
             "linear",
             "polynomial",
             ]
-    for i in models:
-        obj2=Algorithms(i,train_x, test_x, train_y, test_y)
+  
+    obj2=Algorithms(str((i for i in models)),train_x, test_x, train_y, test_y)

@@ -1,21 +1,12 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
-'''
-Regression Algorithms compirsing of SVR, Polynomial, Linear, Ridge, Elasticnet, Lasso.
-Input Parameters for each algorithm : String(moddel_name), pandas.dataFrame(x_train_features),pandas.dataFrame(y_train_features), pandas.dataFrame(x_test_features), pandas.dataFrame(y_test_features)
-Output : MeanSquaredError and R-Squared
-'''
+
 from sklearn import svm
 from sklearn.metrics import mean_squared_error, r2_score
 from sklearn import linear_model
 from sklearn.preprocessing import PolynomialFeatures as poly
 import traceback
 import pandas as pd
-import os
-import traceback
-import multiprocessing as proc
-from sklearn.preprocessing import StandardScaler
-
+from sklearn.feature_selection import RFE
+from sklearn.ensemble import RandomForestClassifier as rf
 
 class Compute(object):
 
@@ -28,7 +19,6 @@ class Compute(object):
         self.path = ""
 
     def split_dataset(self):
-            # Split training data into training and test set
         self.train_x = self.dataset.iloc[:int(0.8 * len(self.dataset)),
                                          :4]
         self.train_x.append(self.dataset.iloc[:int(0.8
@@ -41,14 +31,19 @@ class Compute(object):
                                          4]
         self.test_y = self.dataset.iloc[:int(0.2 * len(self.dataset)),
                                         4]
-        print (self.train_x, self.test_x, self.train_y, self.test_y)
+        
+        clf = rf(max_depth=2, random_state=0)
+        rfe = RFE(estimator=clf, n_features_to_select=4, step=1)
+        rfe.fit(self.train_x, self.train_y)
+        self.test_x=rfe.fit_transform(self.test_x,self.test_y)
+        self.train_x=rfe.fit_transform(self.train_x,self.train_y)
+        print(self.train_x)
         return
 
    
     def data_loader(self):
         try:
-            self.path = "/home/kuliza287/codes/drive/projects/accuracy_tuning_methods/dataset/german.data-numeric.txt"
-            self.dataset = pd.read_csv(
+            self.path = input()
                 self.path,
                 index_col=None,
                 names= [
@@ -279,5 +274,5 @@ if __name__ == '__main__':
             "linear",
             "polynomial",
             ]
-    for i in models:
-        obj2=Algorithms(i,train_x, test_x, train_y, test_y)
+  
+    obj2=Algorithms(str((i for i in models)),train_x, test_x, train_y, test_y)

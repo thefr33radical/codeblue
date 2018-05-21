@@ -47,7 +47,7 @@ class Compute(object):
    
     def data_loader(self):
         try:
-            self.path = "/home/kuliza287/codes/drive/projects/accuracy_tuning_methods/dataset/german.data-numeric.txt"
+            self.path = input()
             self.dataset = pd.read_csv(
                 self.path,
                 index_col=None,

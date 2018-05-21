@@ -1,10 +1,3 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
-'''
-Regression Algorithms compirsing of SVR, Polynomial, Linear, Ridge, Elasticnet, Lasso.
-Input Parameters for each algorithm : String(moddel_name), pandas.dataFrame(x_train_features),pandas.dataFrame(y_train_features), pandas.dataFrame(x_test_features), pandas.dataFrame(y_test_features)
-Output : MeanSquaredError and R-Squared
-'''
 from sklearn import svm
 from sklearn.metrics import mean_squared_error, r2_score
 from sklearn import linear_model
@@ -47,7 +40,7 @@ class Compute(object):
    
     def data_loader(self):
         try:
-            self.path = "/home/kuliza287/codes/drive/projects/accuracy_tuning_methods/dataset/german.data-numeric.txt"
+            self.path = ""
             self.dataset = pd.read_csv(
                 self.path,
                 index_col=None,
