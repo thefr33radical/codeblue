@@ -2,7 +2,7 @@
 import os
 print(os.getcwd())
 
-l=[]
+emails=[]
 subject="test"
 message=""
 
@@ -10,13 +10,13 @@ def execute():
     try:
         with open("data/email")as f:
             email=f.read()
-            l=email.split()
+            emails=email.split()
 
         with open("data/data")as f:
             message=f.read()
             
         
-        for i in l:
+        for i in emails:
             os.system('echo "'+message+'" | mail -s "'+subject+'" '+i)
             print(i)
             
