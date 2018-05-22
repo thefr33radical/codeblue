@@ -1,24 +1,24 @@
-# Drive ( Thefr33radical )
+# Drive 
 
-## Folders
+## Author : Thefr33radical
 
-### algo_ds:
+### algo_ds
 
-1.solved problems from various sources, algorithm and Data Structures foremost.
-2.Implementation across C++, Python, Java, Golang, JavaScript etc. Mainly C++, Python.
+1. solved problems from various sources, algorithm and Data Structures foremost.
+2. Implementation across C++, Python, Java, Golang, JavaScript etc. Mainly C++, Python.
 
 -------------------------------------------------------------------------
 
-### projects:
+### projects
 
-1. Domain : Machine Learning/Deep Learning/Augumented Reality/
+1. Domain : Machine Learning/Deep Learning/Augumented Reality/frameworks.
 2. Complete project files with dataset or links to data. 
 3. Comments mention the procedure & Work FLow.
 4. Individual projects have their own README files.
 
 -------------------------------------------------------------------------
 
-### ideone:
+### ideone
 
 1.Files from online IDE ideone, temporary workspace.
 
