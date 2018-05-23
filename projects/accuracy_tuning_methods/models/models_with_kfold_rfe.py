@@ -21,11 +21,11 @@ class Compute(object):
 
     def split_dataset(self):
         # Split training data into training and test set
-        self.train_x = self.dataset.iloc[:-20, :10]
+        self.train_x = self.dataset.iloc[:-5, :10]
 
-        self.test_x = self.dataset.iloc[-20:, :10]
-        self.train_y = self.dataset.iloc[:-20, -1]
-        self.test_y = self.dataset.iloc[-20:, -1]
+        self.test_x = self.dataset.iloc[-5:, :10]
+        self.train_y = self.dataset.iloc[:-5, -1]
+        self.test_y = self.dataset.iloc[-5:, -1]
 
         return
 
@@ -66,8 +66,6 @@ class Algorithms(object):
             self.lasso(model_name, train_x, test_x, train_y, test_y)
 
     def rfe(self, train_x, test_x, train_y, test_y):
-        pred = []
-        temp_pred = []
         final_error = 999999
         count_of_features = len(train_x.columns)
         n_features=[]
@@ -75,9 +73,9 @@ class Algorithms(object):
         temp_train_x=[]
         temp_test_x=[]
 
-        models = [RandomForestRegressor(), linear_model.LinearRegression(), GradientBoostingRegressor()]
+        models = [RandomForestRegressor(), linear_model.LinearRegression()]
         model_name=""
-        x=[]
+
         for model in models:
             for i in range(1, count_of_features):
                 selector = RFE(model, i, step=1)
@@ -88,8 +86,6 @@ class Algorithms(object):
 
                 if mean_error < final_error:
                     final_error = mean_error
-                    pred = temp_pred
-                    model_name=""
                     model_name=str(model)
                     n_features=selector.n_features_
                     feature_rank=selector.ranking_
