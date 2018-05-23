@@ -5,7 +5,9 @@ from sklearn.preprocessing import PolynomialFeatures as poly
 import pandas as pd
 import traceback
 from sklearn import datasets
-
+from sklearn.feature_selection import RFE
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.ensemble import GradientBoostingRegressor
 
 class Compute(object):
 
@@ -24,7 +26,7 @@ class Compute(object):
         self.test_x = self.dataset.iloc[-20:, :10]
         self.train_y = self.dataset.iloc[:-20, -1]
         self.test_y = self.dataset.iloc[-20:, -1]
-        # print(self.test_y)
+
         return
 
     def data_loader(self):
@@ -41,73 +43,69 @@ class Compute(object):
                     self.test_y)
         except Exception:
             traceback.print_exc()
-            return (-1, -1, -1, -1)
+            return (None, None, None, None)
 
 
 class Algorithms(object):
 
-    def __init__(self,
-                 model_name,
-                 train_x,
-                 test_x,
-                 train_y,
-                 test_y):
+    def __init__(self, model_name, train_x, test_x, train_y, test_y):
+
         if model_name == "elasticnet":
-            self.elasticnet(model_name,
-                            train_x,
-                            test_x,
-                            train_y,
-                            test_y)
+            self.elasticnet(model_name, train_x, test_x, train_y, test_y)
 
         if model_name == "svr":
-            self.svr(model_name,
-                     train_x,
-                     test_x,
-                     train_y,
-                     test_y)
+            self.svr(model_name, train_x, test_x, train_y, test_y)
 
         if model_name == "linear":
-            self.linear(model_name,
-                        train_x,
-                        test_x,
-                        train_y,
-                        test_y)
+            self.linear(model_name, train_x, test_x, train_y, test_y)
 
         if model_name == "polynomial":
-            self.polynomial(model_name,
-                            train_x,
-                            test_x,
-                            train_y,
-                            test_y)
+            self.polynomial(model_name, train_x, test_x, train_y, test_y)
 
         if model_name == "lasso":
-            self.lasso(model_name,
-                       train_x,
-                       test_x,
-                       train_y,
-                       test_y)
+            self.lasso(model_name, train_x, test_x, train_y, test_y)
 
-    def svr(
-            self,
-            model_name,
-            train_x,
-            test_x,
-            train_y,
-            test_y,
-    ):
+    def rfe(self, train_x, test_x, train_y, test_y):
+        pred = []
+        temp_pred = []
+        final_error = 999999
+        count_of_features = len(train_x.columns)
+        n_features=[]
+        feature_rank=[]
+        temp_train_x=[]
+        temp_test_x=[]
+
+        models = [RandomForestRegressor(), linear_model.LinearRegression(), GradientBoostingRegressor()]
+        model_name=""
+        x=[]
+        for model in models:
+            for i in range(1, count_of_features):
+                selector = RFE(model, i, step=1)
+                selector = selector.fit(train_x, train_y)
+
+                temp_pred = selector.predict(test_x)
+                mean_error = mean_squared_error(test_y, temp_pred)
+
+                if mean_error < final_error:
+                    final_error = mean_error
+                    pred = temp_pred
+                    model_name=""
+                    model_name=str(model)
+                    n_features=selector.n_features_
+                    feature_rank=selector.ranking_
+                    temp_train_x=selector.transform(train_x)
+                    temp_test_x=selector.transform(test_x)
+        print("Feature Mean error: ", final_error, n_features, feature_rank)
+        test_x=pd.DataFrame(temp_test_x)
+        train_x=pd.DataFrame(temp_train_x)
+        #print(test_x)
+        return train_x, test_x
+
+    def svr(self, model_name, train_x, test_x, train_y, test_y):
         model = svm.SVR(kernel='rbf')
-        model.fit(train_x, train_y)
-        pred = model.predict(test_x)
-        self.print_score(model_name, train_y, train_x, test_y, pred, model)
+        pred = self.rfe(model, train_x, test_x, train_y, test_y)
 
-    def polynomial(
-            self,
-            model_name,
-            train_x,
-            test_x,
-            train_y,
-            test_y,
-    ):
+    def polynomial(self, model_name, train_x, test_x, train_y, test_y):
         model = linear_model.LinearRegression()
         temp = poly(degree=2)
         train_x_poly = temp.fit_transform(train_x)
@@ -117,57 +115,26 @@ class Algorithms(object):
         pred2 = model2.predict(test_x_poly)
         self.print_score(model_name, train_y, train_x, test_y, pred2, model)
 
-    def linear(
-            self,
-            model_name,
-            train_x,
-            test_x,
-            train_y,
-            test_y,
-    ):
+    def linear(self, model_name, train_x, test_x, train_y, test_y):
         model = linear_model.LinearRegression()
-        model.fit(train_x, train_y)
-        pred = model.predict(test_x)
+        train_x, test_x = self.rfe(train_x, test_x, train_y, test_y)
+        model.fit(train_x,train_y)
+        pred=model.predict(test_x)
         self.print_score(model_name, train_y, train_x, test_y, pred, model)
 
-    def ridge(
-            self,
-            model_name,
-            train_x,
-            test_x,
-            train_y,
-            test_y,
-    ):
+    def ridge(self, model_name, train_x, test_x, train_y, test_y):
         model = linear_model.Ridge(alpha=3)
-        model.fit(train_x, train_y)
-        pred = model.predict(test_x)
+        pred = self.rfe(model, train_x, test_x, train_y, test_y)
         self.print_score(model_name, train_y, train_x, test_y, pred, model)
 
-    def lasso(
-            self,
-            model_name,
-            train_x,
-            test_x,
-            train_y,
-            test_y,
-    ):
+    def lasso(self, model_name, train_x, test_x, train_y, test_y):
         model = linear_model.Lasso()
-        model.fit(train_x, train_y)
-        pred = model.predict(test_x)
+        pred = self.rfe(model, train_x, test_x, train_y, test_y)
         self.print_score(model_name, train_y, train_x, test_y, pred, model)
 
-    def elasticnet(
-            self,
-            model_name,
-            train_x,
-            test_x,
-            train_y,
-            test_y,
-    ):
+    def elasticnet(self, model_name, train_x, test_x, train_y, test_y):
         model = linear_model.ElasticNet(alpha=1)
-        model.fit(train_x, train_y)
-        pred = model.predict(test_x)
-        # print(pred)
+
         self.print_score(model_name, train_y, train_x, test_y, pred, model)
 
     def print_score(self, model_name, train_y, train_x, test_y, pred, model):
@@ -183,8 +150,13 @@ if __name__ == '__main__':
     obj = Compute()
     (train_x, test_x, train_y, test_y) = obj.data_loader()
     # print(len(train_x), len(train_y), len(test_x), len(test_y))
-    obj2 = Algorithms("elasticnet", train_x, test_x, train_y, test_y)
-    obj2 = Algorithms("svr", train_x, test_x, train_y, test_y)
-    obj2 = Algorithms("lasso", train_x, test_x, train_y, test_y)
+    #obj2 = Algorithms("linear", train_x, test_x, train_y, test_y)
     obj2 = Algorithms("linear", train_x, test_x, train_y, test_y)
-    obj2 = Algorithms("polynomial", train_x, test_x, train_y, test_y)
+
+    ''' TEST CASES
+    
+    '''
+
+
+
+
