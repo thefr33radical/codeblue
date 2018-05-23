@@ -7,7 +7,7 @@ import traceback
 from sklearn import datasets
 from sklearn.feature_selection import RFE
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.ensemble import GradientBoostingRegressor
+
 
 class Compute(object):
 

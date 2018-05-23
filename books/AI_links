@@ -1,0 +1,258 @@
+AI
+
+Books
+
+
+
+https://github.com/norvig/paip-lisp/blob/master/PAIP-part1.pdf
+
+--------------------------------------------------------------------------------------------------
+
+https://github.com/mhagiwara/100-nlp-papers
+https://towardsdatascience.com/
+https://www.quora.com/How-do-I-learn-mathematics-for-machine-learning
+
+--------------------------------------------------------------------------------------------------
+PCA
+
+https://stats.stackexchange.com/questions/2691/making-sense-of-principal-component-analysis-eigenvectors-eigenvalues
+
+http://blog.explainmydata.com/2012/07/should-you-apply-pca-to-your-data.html
+
+--------------------------------------------------------------------------------------------------
+Distance Measurement:
+
+http://www.improvedoutcomes.com/docs/WebSiteDocs/Clustering/Clustering_Parameters/Distance_Metrics_Overview.htm
+
+Pearson Co-efficient:
+
+http://www.statisticshowto.com/what-is-the-pearson-correlation-coefficient/
+https://stackoverflow.com/questions/13324144/how-to-know-when-to-use-a-particular-kind-of-similarity-index-euclidean-distanc
+
+--------------------------------------------------------------------------------------------------
+Performance Metrics
+
+https://medium.com/greyatom/performance-metrics-for-classification-problems-in-machine-learning-part-i-b085d432082b
+https://www.analyticsvidhya.com/blog/2016/02/7-important-model-evaluation-error-metrics/
+https://www.theanalysisfactor.com/assessing-the-fit-of-regression-models/
+--------------------------------------------------------------------------------------------------
+
+PreProcessing:
+
+http://scikit-learn.org/stable/modules/preprocessing.html
+
+--------------------------------------------------------------------------------------------------
+
+Text Summarization:
+
+https://thetokenizer.com/2013/04/28/build-your-own-summary-tool/
+https://pypi.python.org/pypi/sumy
+--------------------------------------------------------------------------------------------------
+
+Precision & Recall
+https://tryolabs.com/blog/2013/03/25/why-accuracy-alone-bad-measure-classification-tasks-and-what-we-can-do-about-it/
+
+--------------------------------------------------------------------------------------------------
+Logistic Regression
+
+https://www.hackerearth.com/practice/machine-learning/machine-learning-algorithms/logistic-regression-analysis-r/tutorial/
+https://www.analyticsvidhya.com/blog/2015/10/regression-python-beginners/
+
+--------------------------------------------------------------------------------------------------
+Polynomial Regression:
+
+http://polynomialregression.drque.net/math.html
+https://stackoverflow.com/questions/39327187/excel-polynomial-regression-with-multiple-variables
+
+--------------------------------------------------------------------------------------------------
+Deep Learning
+
+http://realai.org/
+https://www.analyticsvidhya.com/blog/2016/12/21-deep-learning-videos-tutorials-courses-on-youtube-from-2016/
+https://www.quora.com/What-are-the-best-resources-to-learn-about-deep-learning
+http://pslcdatashop.org/KDDCup/workshop/papers/kdd2010ntu.pdf
+https://www.edureka.co/blog/deep-learning-tutorial
+
+--------------------------------------------------------------------------------------------------
+Feature
+F eature Extraction
+http://scikit-learn.org/stable/modules/feature_extraction.html
+
+Feature Engineering
+
+http://pslcdatashop.org/KDDCup/workshop/papers/kdd2010ntu.pdf
+
+Feature Scaling
+
+https://stackoverflow.com/questions/26225344/why-feature-scaling
+https://stats.stackexchange.com/questions/41704/how-and-why-do-normalization-and-feature-scaling-work?newreg=cb1ec1dda52e45b3be7d1688a57d07ad
+--------------------------------------------------------------------------------------------------
+Cheat Sheet
+
+https://news.ycombinator.com/from?site=unsupervisedmethods.com
+
+--------------------------------------------------------------------------------------------------
+SVM
+
+http://machinelearningmastery.com/support-vector-machines-for-machine-learning/
+http://scikit-learn.org/stable/modules/svm.html
+--------------------------------------------------------------------------------------------------
+Sorangshu
+
+https://opensource.com/article/17/6/resources-getting-started-python-and-machine-learning
+
+--------------------------------------------------------------------------------------------------
+Normalization
+
+https://stats.stackexchange.com/questions/189652/is-it-a-good-practice-to-always-scale-normalize-data-for-machine-learning
+-----------------------------------------------------------------------------------------------
+Regression Analysis
+
+https://www.datarobot.com/blog/ordinary-least-squares-in-python/
+https://www.analyticsvidhya.com/blog/2015/08/comprehensive-guide-regression/
+https://medium.com/@dhwajraj/python-regression-analysis-part-4-multiple-linear-regression-ed09a0c31c74
+https://www.analyticsvidhya.com/blog/2015/08/comprehensive-guide-regression/
+https://etav.github.io/python/vif_factor_python.html
+https://www.analyticsvidhya.com/blog/2015/08/comprehensive-guide-regression/
+------------------------------------------------------------------------------------------------
+Implementation of ML algorithms
+
+http://www.johnwittenauer.net/machine-learning-exercises-in-python-part-2/
+www.turingfinance.com/regression-analysis-using-python-statsmodels-and-quandl/
+-----------------------------------------------------------------------------------------------
+Linear Regression
+
+https://www.analyticsvidhya.com/blog/2015/10/regression-python-beginners/
+http://setosa.io/ev/ordinary-least-squares-regression/
+http://www.statisticssolutions.com/assumptions-of-linear-regression/
+http://www.statisticssolutions.com/assumptions-of-linear-regression/
+----------------------------------------------------------------------------------------------
+Recommender Systems
+
+https://www.analyticsvidhya.com/blog/2015/08/beginners-guide-learn-content-based-recommender-systems/
+https://www.r-bloggers.com/recommender-systems-101-a-step-by-step-practical-example-in-r/
+http://infolab.stanford.edu/~ullman/mmds/ch9.pdf\
+https://www.ibm.com/developerworks/library/os-recommender1/
+http://www.recsyswiki.com/wiki/Main_Page?cm_mc_uid=07738895752714996696451&cm_mc_sid_50200000=1501571797
+https://www.quora.com/How-does-LinkedIns-recommendation-system-work?cm_mc_uid=07738895752714996696451&cm_mc_sid_50200000=1501578833
+
+------------------------------------------------------------------------------------------------
+Data Visualization
+
+https://www.analyticsvidhya.com/blog/2015/05/data-visualization-resource/
+http://www.kdnuggets.com/2016/06/python-data-visualization-libraries.html
+https://www.analyticsvidhya.com/blog/2015/05/data-visualization-python/
+
+---------------------------------------------------------------------------------
+Google Brain Residency
+
+http://tinyclouds.org/residency/
+
+---------------------------------------------------------------------------------
+What to Retrieve 
+
+Leveraging User Reviews to Improve Accuracy for Mobile App Retrieval.
+Dae Hoon Park, Mengwen Liu, ChengXiang Zhai, Haohong Wang
+
+Retrieval of Relevant Opinion Sentences for New Products. Dae Hoon
+Park, Hyun Duk Kim, ChengXiang Zhai, Lifan Guo
+
+Temporal Feedback for Tweet Search with Non-Parametric Density
+Estimation. Miles Efron, Jimmy Lin, Jiyin He, Arjen P. de Vries
+
+--------------------------------------------------------------------------------
+Query Compilation
+
+Analyzing User’s Sequential Behavior in Query Auto-Completion via
+Markov Processes. Liangda Li, Hongbo Deng, Anlei Dong, Yi Chang,
+Hongyuan Zha, Ricardo Baeza-Yates
+
+adaQAC: Adaptive Query Auto-Completion via Implicit Negative
+Feedback. Aston Zhang, Amit Goyal, Weize Kong, Hongbo Deng, Anlei
+Dong, Yi Chang, Carl A. Gunter, Jiawei Han
+
+Different users, Different Opinions: Predicting Search Satisfaction with Mouse
+Movement Information. Yiqun Liu, Ye Chen, Jinhui Tang, Jiashen Sun, Min Zhang,
+Shaoping Ma, Xuan Zhu
+
+word2vec
+http://papers.nips.cc/paper/5021-distributed-representations-of-words-and-phrases-and-their-compositionality.pdf
+
+An Eye-Tracking Study of Query Reformulation. Carsten Eickhoff, Sebastian Dungs,
+Vu Tran
+
+---------------------------------------------------------------------------------
+Naive Bayes vs Logistic Regression
+
+http://www.cs.cmu.edu/~tom/mlbook/NBayesLogReg.pdf
+http://ai.stanford.edu/~ang/papers/nips01-discriminativegenerative.pdf
+
+Naive Bayes:
+
+https://nlp.stanford.edu/IR-book/html/htmledition/properties-of-naive-bayes-1.html
+http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.141.751&rep=rep1&type=pdf
+http://www.cs.unb.ca/~hzhang/publications/FLAIRS04ZhangH.pdf
+http://sebastianraschka.com/Articles/2014_naive_bayes_1.html
+https://web.stanford.edu/class/cs124/lec/naivebayes.pdf
+https://www.analyticsvidhya.com/blog/2017/09/naive-bayes-explained/
+
+
+----------------------------------------------------------------------------------
+Machine Learning
+
+http://www.cse.iitk.ac.in/users/piyush/
+https://www.quora.com/What-are-the-most-important-research-papers-which-all-NLP-students-should-definitely-read
+reco
+
+LSTM
+
+http://www.felixgers.de/papers/phd.pdf
+https://ccc.inaoep.mx/~pgomez/conferences/PggISCI14.pdf4
+https://github.com/kjw0612/awesome-rnn
+
+--------------------------------------------------------------------------------------------------
+
+Deep Learning
+
+
+1. Christopher Olah's Blog: http://colah.github.io (this guy is with Google Brain and has godly presentation skills)
+2. Distill.pub blog posts: http://distill.pub (Google Brain's most awesome blogs/tutorials are published here. Super amazing visualisations)
+3. Google Brain official website: http://research.google.com/teams/brain/ (for the latest and greatest from the leaders here...)
+4. Google Research Blog: https://research.googleblog.com 
+5. A.I. Experiments from Google: https://aiexperiments.withgoogle.com (completely mesmerising set of experiments and fun games to get even the school-kid dreaming to be an AI scientist! Yes, its so cool! :D )
+6. The Awesome-Deep-Learning series: https://github.com/ChristosChristofid…/awesome-deep-learning (a pretty exhaustive list of study material on Deep Learning!)
+7. Andrej Karpathy's Blog: http://karpathy.github.io 
+8. OpenAI blog: https://openai.com/blog/ (Follow this link to know what the most daring and crazy people of this field are working on...)
+9. Torch Blog: http://torch.ch/blog/ (Pretty neat tutorials)
+10. Facebook AI research: https://research.fb.com/category/facebook-ai-research-fair/ (For all the good stuff they work on...)
+
+--------------------------------------------------------------------------------------------------
+https://www.quora.com/What-is-the-difference-between-PCA-and-SVD
+
+--------------------------------------------------------------------------------------------------
+Tools for Data Analysis:
+
+https://github.com/rufuspollock/command-line-data-wrangling
+https://www.computerworld.com/article/2502891/business-intelligence/business-intelligence-8-cool-tools-for-data-analysis-visualization-and-presentation.html
+--------------------------------------------------------------------------------------------------
+
+Deep Learning Schematic Diagram:
+https://github.com/dformoso/deeplearning-mindmap/blob/master/Deep%20Learning.pdf
+
+Training Time of Various DL Libraries
+https://medium.com/@iliakarmanov/neural-net-in-8-frameworks-lessons-learned-6a5e8e78b481
+--------------------------------------------------------------------------------------
+autonomous agents
+
+http://natureofcode.com/book/chapter-6-autonomous-agents/
+
+Advances in Neural Information Processing Systems
+https://papers.nips.cc/book/advances-in-neural-information-processing-systems-28-2015
+
+----------------------------------------------------------------------------------------
+
+https://developers.googleblog.com/2017/09/introducing-tensorflow-datasets.html?m=1
+
+
+https://alex-fabbri.github.io/TutorialBank/
+http://cnerg.iitkgp.ac.in/aclakg/search 
