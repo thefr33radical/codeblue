@@ -96,6 +96,19 @@ class Algorithms(object):
                     temp_train_x=selector.transform(train_x)
                     temp_test_x=selector.transform(test_x)
         print("Feature Mean error: ", final_error, n_features, feature_rank)
+        feature_labels=list(zip(feature_rank, train_x.columns))
+        feature_labels_rank=[]
+        count=0
+        for i in feature_labels:
+            temp=list(i)
+            temp.append(count)
+            feature_labels_rank.append(temp)
+            count+=1
+
+        feature_rank=pd.DataFrame(feature_labels_rank,columns=["Rank","Label","Index"])
+        #feature_rank.to_csv("feature_rank.csv")
+        print(feature_rank)
+
         test_x=pd.DataFrame(temp_test_x)
         train_x=pd.DataFrame(temp_train_x)
         #print(test_x)
@@ -103,10 +116,16 @@ class Algorithms(object):
 
     def svr(self, model_name, train_x, test_x, train_y, test_y):
         model = svm.SVR(kernel='rbf')
-        pred = self.rfe(model, train_x, test_x, train_y, test_y)
+        train_x, test_x = self.rfe(train_x, test_x, train_y, test_y)
+        model.fit(train_x, train_y)
+        pred = model.predict(test_x)
+        self.print_score(model_name, train_y, train_x, test_y, pred, model)
 
     def polynomial(self, model_name, train_x, test_x, train_y, test_y):
         model = linear_model.LinearRegression()
+
+        train_x, test_x = self.rfe(train_x, test_x, train_y, test_y)
+
         temp = poly(degree=2)
         train_x_poly = temp.fit_transform(train_x)
         test_x_poly = temp.fit_transform(test_x)
@@ -124,17 +143,23 @@ class Algorithms(object):
 
     def ridge(self, model_name, train_x, test_x, train_y, test_y):
         model = linear_model.Ridge(alpha=3)
-        pred = self.rfe(model, train_x, test_x, train_y, test_y)
+        train_x, test_x = self.rfe(train_x, test_x, train_y, test_y)
+        model.fit(train_x, train_y)
+        pred = model.predict(test_x)
         self.print_score(model_name, train_y, train_x, test_y, pred, model)
 
     def lasso(self, model_name, train_x, test_x, train_y, test_y):
         model = linear_model.Lasso()
-        pred = self.rfe(model, train_x, test_x, train_y, test_y)
+        train_x, test_x = self.rfe(train_x, test_x, train_y, test_y)
+        model.fit(train_x, train_y)
+        pred = model.predict(test_x)
         self.print_score(model_name, train_y, train_x, test_y, pred, model)
 
     def elasticnet(self, model_name, train_x, test_x, train_y, test_y):
         model = linear_model.ElasticNet(alpha=1)
-
+        train_x, test_x = self.rfe(train_x, test_x, train_y, test_y)
+        model.fit(train_x, train_y)
+        pred = model.predict(test_x)
         self.print_score(model_name, train_y, train_x, test_y, pred, model)
 
     def print_score(self, model_name, train_y, train_x, test_y, pred, model):
@@ -151,7 +176,7 @@ if __name__ == '__main__':
     (train_x, test_x, train_y, test_y) = obj.data_loader()
     # print(len(train_x), len(train_y), len(test_x), len(test_y))
     #obj2 = Algorithms("linear", train_x, test_x, train_y, test_y)
-    obj2 = Algorithms("linear", train_x, test_x, train_y, test_y)
+    obj2 = Algorithms("polynomial", train_x, test_x, train_y, test_y)
 
     ''' TEST CASES
     
