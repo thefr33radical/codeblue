@@ -13,6 +13,7 @@ def add_edge(obj,u,v):
         
 def check_leaves(obj,s):
     q=[]
+    count=0
     q.append(0)
     print(q)
     while(q):
@@ -23,7 +24,9 @@ def check_leaves(obj,s):
            isleaf=1
            
         if isleaf==0:
-            print(temp)
+            #print(temp)
+            count+=1
+    print(count)
         
 def compute():
     obj=graph(5)
