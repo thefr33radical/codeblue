@@ -27,6 +27,8 @@ class Compute(object):
         self.train_y = self.dataset.iloc[:-5, -1]
         self.test_y = self.dataset.iloc[-5:, -1]
 
+        print(self.train_x.iloc[:,-2])
+
         return
 
     def data_loader(self):
