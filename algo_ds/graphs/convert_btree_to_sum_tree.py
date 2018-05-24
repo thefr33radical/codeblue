@@ -1,4 +1,5 @@
 #Convert a given tree to its Sum Tree
+# T(C)= O(n)
 
 class Tree(object):
     def __init__(self,v):
