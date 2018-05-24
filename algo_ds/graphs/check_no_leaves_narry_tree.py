@@ -13,20 +13,17 @@ def add_edge(obj,u,v):
         
 def check_leaves(obj,s):
     q=[]
-    q.append(obj.adj[s])
+    q.append(0)
     print(q)
     while(q):
         temp=q.pop(0)
         isleaf=0
-        
         for i in obj.adj[temp]:
            q.append(i)
            isleaf=1
            
         if isleaf==0:
             print(temp)
-        
-           
         
 def compute():
     obj=graph(5)
