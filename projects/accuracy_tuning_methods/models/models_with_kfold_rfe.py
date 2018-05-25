@@ -7,6 +7,7 @@ import traceback
 from sklearn import datasets
 from sklearn.feature_selection import RFE
 from sklearn.ensemble import RandomForestRegressor
+from sklearn.decomposition import PCA
 
 
 class Compute(object):
@@ -67,6 +68,34 @@ class Algorithms(object):
         if model_name == "lasso":
             self.lasso(model_name, train_x, test_x, train_y, test_y)
 
+
+
+        '''   def rfe(self, train_x, test_x, train_y, test_y):
+        final_error = 999999
+        count_of_features = len(train_x.columns)
+        n_features = []
+        feature_rank = []
+        temp_train_x = []
+        temp_test_x = []
+
+        models = [RandomForestRegressor(), linear_model.LinearRegression()]
+        model_name = ""
+
+        for model in models:
+            for i in range(1, count_of_features):
+                selector = PCA(n_components=i)
+                selector = selector.fit(train_x, train_y)
+
+                temp_pred = selector.transform(test_x)
+                self.polynomial("polynomial",train_x,test_x,train_y, test_y)
+                
+        return train_x, test_x '''
+
+    def pca(self, train_x, test_x, train_y, test_y):
+        pass
+
+
+
     def rfe(self, train_x, test_x, train_y, test_y):
         final_error = 999999
         count_of_features = len(train_x.columns)
@@ -117,20 +146,37 @@ class Algorithms(object):
         train_x, test_x = self.rfe(train_x, test_x, train_y, test_y)
         model.fit(train_x, train_y)
         pred = model.predict(test_x)
+
         self.print_score(model_name, train_y, train_x, test_y, pred, model)
+
+    def compute_score(self, test_y, pred):
+         return r2_score(test_y, pred), mean_squared_error(test_y, pred)
 
     def polynomial(self, model_name, train_x, test_x, train_y, test_y):
         model = linear_model.LinearRegression()
 
-        train_x, test_x = self.rfe(train_x, test_x, train_y, test_y)
+        models = [RandomForestRegressor(), linear_model.LinearRegression(), svm.SVR(kernel='rbf'), linear_model.Ridge(alpha=3), linear_model.ElasticNet(alpha=1)]
 
-        temp = poly(degree=2)
-        train_x_poly = temp.fit_transform(train_x)
-        test_x_poly = temp.fit_transform(test_x)
+        count_of_features = len(train_x.columns)
 
-        model2 = model.fit(train_x_poly, train_y)
-        pred2 = model2.predict(test_x_poly)
-        self.print_score(model_name, train_y, train_x, test_y, pred2, model)
+        for model in models:
+            for i in range(1, count_of_features):
+                selector = PCA(n_components=i)
+                selector = selector.fit(train_x, train_y)
+
+                temp_test_x = selector.transform(test_x)
+                temp_train_x = selector.transform(train_x)
+                print ("length of components",i,len(temp_train_x),len(train_y),len(temp_test_x),len(test_y))
+                '''temp = poly(degree=2)
+                train_x_poly = temp.fit_transform(temp_train_x )
+                test_x_poly = temp.fit_transform(temp_test_x)
+                '''
+                model2 = model.fit(temp_train_x ,train_y)
+                pred2 = model2.predict(temp_test_x)
+                model_name=str(model2)
+
+
+                self.print_score(model_name, train_y, train_x, test_y, pred2, model)
 
     def linear(self, model_name, train_x, test_x, train_y, test_y):
         model = linear_model.LinearRegression()
@@ -173,8 +219,8 @@ if __name__ == '__main__':
     obj = Compute()
     (train_x, test_x, train_y, test_y) = obj.data_loader()
     # print(len(train_x), len(train_y), len(test_x), len(test_y))
-    #obj2 = Algorithms("linear", train_x, test_x, train_y, test_y)
-    obj2 = Algorithms("polynomial", train_x, test_x, train_y, test_y)
+    obj2 = Algorithms("liner", train_x, test_x, train_y, test_y)
+    obj2.polynomial("linear", train_x, test_x, train_y, test_y)
 
     ''' TEST CASES
     
