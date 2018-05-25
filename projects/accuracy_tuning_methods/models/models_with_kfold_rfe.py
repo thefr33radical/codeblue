@@ -8,8 +8,8 @@ from sklearn import datasets
 from sklearn.feature_selection import RFE
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.decomposition import PCA
-
-
+from sklearn.cross_validation import cross_val_score
+import numpy as np
 class Compute(object):
 
     def __init__(self):
@@ -159,24 +159,29 @@ class Algorithms(object):
 
         count_of_features = len(train_x.columns)
 
+        global_r2_score=9999999
+        global_mean_score=999999
+
         for model in models:
             for i in range(1, count_of_features):
                 selector = PCA(n_components=i)
-                selector = selector.fit(train_x, train_y)
+                selector.fit(train_x, train_y)
 
-                temp_test_x = selector.transform(test_x)
                 temp_train_x = selector.transform(train_x)
-                print ("length of components",i,len(temp_train_x),len(train_y),len(temp_test_x),len(test_y))
-                '''temp = poly(degree=2)
-                train_x_poly = temp.fit_transform(temp_train_x )
-                test_x_poly = temp.fit_transform(temp_test_x)
-                '''
-                model2 = model.fit(temp_train_x ,train_y)
-                pred2 = model2.predict(temp_test_x)
-                model_name=str(model2)
+                temp_test_x = selector.transform(test_x)
+
+                model_name=str(model)
+                model.fit(temp_train_x ,train_y)
+                pred = model.predict(temp_test_x)
+                scores = cross_val_score(model,temp_train_x, train_y, scoring="neg_mean_squared_error", cv=25)
+                rmse_scores = np.sqrt(-scores)
+
+                print(" Cross RMSE : ",max(rmse_scores), "Model name : ",model_name[:5], "  Dimensions : ",  i, " RMSE : ",np.sqrt(mean_squared_error(test_y,pred)), " R2 Score :", r2_score(test_y,pred) )
+
+                #r2_score,mean_squared_error=self.compute_score(test_y, pred)
 
 
-                self.print_score(model_name, train_y, train_x, test_y, pred2, model)
+                #self.print_score(model_name, train_y, train_x, test_y, pred, model)
 
     def linear(self, model_name, train_x, test_x, train_y, test_y):
         model = linear_model.LinearRegression()
