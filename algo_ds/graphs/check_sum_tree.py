@@ -1,4 +1,5 @@
 # Check if a given Binary Tree is SumTree
+#T(C)= O(n)
 
 
 class Tree(object):
