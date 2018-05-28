@@ -1,6 +1,12 @@
 ===============================================
 #Exploring methodology for finetuing Accuracy 
 ==============================================
+##Author : Thefr33radical
+##Status : Active
+## Project level : 4/10
+
+## Info: 
+Exploring ways to get he best accuracy using various features and available methods.
 
 ##Package comprises of 4 files
 
@@ -19,8 +25,5 @@
 	 pip install -r requirements.txt
 3. built on Python3
 
-##Author : Thefr33radical
-
-##Status : Active
 
 
