@@ -3,11 +3,13 @@ from sklearn.metrics import mean_squared_error, r2_score
 from sklearn import linear_model
 from sklearn.preprocessing import PolynomialFeatures as poly
 import pandas as pd
+import numpy as np
 import traceback
 from sklearn import datasets
 from sklearn.feature_selection import RFE
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.ensemble import GradientBoostingRegressor
+from sklearn.decomposition import PCA
 
 
 class Compute(object):
@@ -66,7 +68,7 @@ class Algorithms(object):
         if model_name == "lasso":
             self.lasso(model_name, train_x, test_x, train_y, test_y)
 
-    def rfe(self, train_x, test_x, train_y, test_y):
+    def rfe_model(self, train_x, test_x, train_y, test_y):
         final_error = 999999
         count_of_features = len(train_x.columns)
         n_features = []
@@ -75,8 +77,6 @@ class Algorithms(object):
         temp_test_x = []
 
         models = [RandomForestRegressor(), linear_model.LinearRegression()]
-        model_name = ""
-
         for model in models:
             for i in range(1, count_of_features):
                 selector = RFE(model, i, step=1)
@@ -87,7 +87,6 @@ class Algorithms(object):
 
                 if mean_error < final_error:
                     final_error = mean_error
-                    model_name = str(model)
                     n_features = selector.n_features_
                     feature_rank = selector.ranking_
                     temp_train_x = selector.transform(train_x)
@@ -103,13 +102,44 @@ class Algorithms(object):
             count += 1
 
         feature_rank = pd.DataFrame(feature_labels_rank, columns=["Rank", "Label", "Index"])
-        # feature_rank.to_csv("feature_rank.csv")
+        feature_rank.to_csv("feature_rank.csv")
         print(feature_rank)
 
         test_x = pd.DataFrame(temp_test_x)
         train_x = pd.DataFrame(temp_train_x)
         # print(test_x)
         return train_x, test_x
+
+    def pca_model(self, train_input, test_input, train_output, test_output):
+        output = pd.DataFrame()
+        count_of_features = len(train_input.columns)
+
+        global_r2_score = 0
+        global_mean_score = 999999
+        MODELS_GENERAL = [RandomForestRegressor(), linear_model.LinearRegression(), svm.SVR(kernel='rbf'),
+                  linear_model.Ridge(alpha=3), linear_model.ElasticNet(alpha=1)]
+        l=[]
+        # MODELS_GENERAL comprises of models that are used to train newly constructed features.
+        for model in MODELS_GENERAL:
+            for i in range(1, count_of_features):
+                selector = PCA(n_components=i)
+                selector = selector.fit(train_input, train_output)
+
+                temp_test_input = selector.transform(test_input)
+                temp_train_input = selector.transform(train_input)
+                model_name = str(model)
+                model.fit(temp_train_input, train_output)
+                pred = model.predict(temp_test_input)
+                temp = {"MODEL_NAME": model_name[:7], " DIMENSION": i, "RMSE": np.sqrt(mean_squared_error(test_output, pred ))," R2_SCORE ": r2_score(test_output, pred)}
+                l.append(temp)
+
+                if global_mean_score > np.sqrt(mean_squared_error(test_output, pred)) and global_r2_score < r2_score(test_output, pred):
+                    global_mean_score = np.sqrt(mean_squared_error(test_output, pred))
+                    global_r2_score = r2_score(test_output, pred)
+
+        output = pd.DataFrame(l)
+        # All the models score with model name is stored in a csv file
+        output.to_csv("output_score.csv", sep=",")
 
     def svr(self, model_name, train_x, test_x, train_y, test_y):
         model = svm.SVR(kernel='rbf')
@@ -172,10 +202,14 @@ if __name__ == '__main__':
     obj = Compute()
     (train_x, test_x, train_y, test_y) = obj.data_loader()
     # print(len(train_x), len(train_y), len(test_x), len(test_y))
-    # obj2 = Algorithms("linear", train_x, test_x, train_y, test_y)
-    obj2 = Algorithms("polynomial", train_x, test_x, train_y, test_y)
+    obj2 = Algorithms("linear", train_x, test_x, train_y, test_y)
+    #obj2 = Algorithms()
+
+
 
     ''' TEST CASES
+    obj2.pca_model(train_x, test_x, train_y, test_y)
+    obj2.rfe_model(train_x, test_x, train_y, test_y)
 
     '''
 
