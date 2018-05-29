@@ -3,13 +3,10 @@ from sklearn.metrics import mean_squared_error, r2_score
 from sklearn import linear_model
 from sklearn.preprocessing import PolynomialFeatures as poly
 import pandas as pd
-import numpy as np
 import traceback
 from sklearn import datasets
 from sklearn.feature_selection import RFE
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.ensemble import GradientBoostingRegressor
-from sklearn.decomposition import PCA
 
 
 class Compute(object):
@@ -68,6 +65,7 @@ class Algorithms(object):
         if model_name == "lasso":
             self.lasso(model_name, train_x, test_x, train_y, test_y)
 
+    
     def rfe_model(self, train_x, test_x, train_y, test_y):
         final_error = 999999
         count_of_features = len(train_x.columns)
@@ -110,12 +108,8 @@ class Algorithms(object):
         # print(test_x)
         return train_x, test_x
 
-
-
     def svr(self, model_name, train_x, test_x, train_y, test_y):
         model = svm.SVR(kernel='rbf')
-        train_x, test_x = self.rfe(train_x, test_x, train_y, test_y)
-        model.fit(train_x, train_y)
         pred = model.predict(test_x)
         self.print_score(model_name, train_y, train_x, test_y, pred, model)
 
@@ -134,7 +128,6 @@ class Algorithms(object):
 
     def linear(self, model_name, train_x, test_x, train_y, test_y):
         model = linear_model.LinearRegression()
-        train_x, test_x = self.rfe(train_x, test_x, train_y, test_y)
         model.fit(train_x, train_y)
         pred = model.predict(test_x)
         self.print_score(model_name, train_y, train_x, test_y, pred, model)
@@ -176,7 +169,7 @@ if __name__ == '__main__':
     obj2 = Algorithms("linear", train_x, test_x, train_y, test_y)
     #obj2 = Algorithms()
 
-
+    obj2.base_model(train_x, test_x, train_y, test_y)
 
     ''' TEST CASES
     obj2.pca_model(train_x, test_x, train_y, test_y)
