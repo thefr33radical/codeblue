@@ -16,27 +16,32 @@ using namespace std;
 
 int main()
 {
-    String s;
+    char s[15];
     cin>>s;
+	
     stack<pair<char,int>> stk;
-    int counter=0;
-    for(int i=0; i<s.length(); i++)
+    int counter=0,counter2=0,global_count=0;
+     for ( int i=0; i<15;i++)
     {
-        if(s[i]=="(")
-        {
-            stk.push(make_pair("(",++count));
+	if(s[i]=='(')
+        {	
+            stk.push(make_pair('(',++counter));
+            //counter++;
         }
-
-         if(s[i]==")")
+         else if(s[i]==')')
         {
-            stk.push(make_pair("(",--count));
+            stk.push(make_pair(')',counter--));
+           // counter--;
         }
 
 
     }
 
-    for(auto i:stk)
-        cout<<i;
+    for(; !stk.empty();)
+    {
+	cout<<stk.top().second<<" ";
+	stk.pop();
+    }
 
     return 0;
 }
