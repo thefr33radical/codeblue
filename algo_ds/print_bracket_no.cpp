@@ -8,29 +8,29 @@ Eg :
 1 2 2 1 3 3
 */
 
-
 #include<bits/stdc++.h>
 using namespace std;
-
-
 
 int main()
 {
     char s[15];
     cin>>s;
 	
-    stack<pair<char,int>> stk;
-    int counter=0,counter2=0,global_count=0;
+    stack<pair<char,int> > stk;
+    stack<int>count;
+    int counter=0;
      for ( int i=0; i<15;i++)
     {
 	if(s[i]=='(')
-        {	
-            stk.push(make_pair('(',++counter));
+        {	++counter;
+            count.push(counter);
+            stk.push(make_pair('(',count.top()));
             //counter++;
         }
          else if(s[i]==')')
         {
-            stk.push(make_pair(')',counter--));
+            stk.push(make_pair(')',count.top()));
+            count.pop();
            // counter--;
         }
 
