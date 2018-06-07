@@ -46,6 +46,6 @@ def compute2(string1,string2):
     print("Anagram",s1,s2)
 
 if __name__=='__main__':
-    string1="listeln"
+    string1="listel4n"
     string2="silentl"
     compute2(string1,string2)

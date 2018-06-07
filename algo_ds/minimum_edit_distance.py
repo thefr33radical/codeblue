@@ -1,5 +1,6 @@
 """
-Minimum Edit Distance with equal weightage to delete,replace,insert
+Minimum Edit Distance with equal weightage to delete,replace,insert.
+Without DP, Brute Force paradigm.
 T(C)=O(3^m)
 """
 
