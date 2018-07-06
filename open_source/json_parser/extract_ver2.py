@@ -10,7 +10,7 @@ import ast
 
 obj=dict()
 
-pathname="/home/kuliza227/Downloads/loc.txt"
+pathname="path/loc.txt"
 def extract(key,value,temp):
 
     if (type(value) == dict):

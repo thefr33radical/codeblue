@@ -25,7 +25,7 @@ class t(object):
                  
     def print_(self,head,string):
         temp=head
-       # print(string,self.l,temp.isleaf)
+       # print(string,self.l,temp.ssisleaf)
         for i in range(len(temp.kids)):
             if(temp.kids[i]==1):
                 self.print_(temp.val[i],string+chr(ord('a')+i))
