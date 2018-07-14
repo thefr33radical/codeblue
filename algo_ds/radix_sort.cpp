@@ -1,6 +1,13 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+int max_value(vector<int>& arr)
+{
+    int maximum=max_element(arr,arr.begin(),arr.end());
+    
+    return maximum;
+}
+
 void radix(vector<int>&arr, int exp)
 {
 	
@@ -10,8 +17,8 @@ void radix(vector<int>&arr, int exp)
 
 void sorter(vector<int>&arr)
 {
-
-for(int i =1;i<max;i=i*10)
+    int max_value=max_value(arr);
+    for(int i =1;i<max_value;i=i*10)
    {	radix(arr,i);
    	
    }
