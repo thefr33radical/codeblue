@@ -1,3 +1,6 @@
+//https://stackoverflow.com/questions/30115507/why-isnt-counting-sort-a-more-widely-used-algorithm
+
+
 #include<bits/stdc++.h>
 using namespace std;
 int main()
@@ -83,4 +86,27 @@ int main() {
 	for(auto i:arr)
 	cout<<" "<<i;
 	return 0;
-}*/
+}
+
+
+void compute(vector<int>&arr)
+{
+    map<int,int>m;
+
+    for(int i=0; i<arr.size();i++)
+    {
+        m[arr[i]]++;
+
+    }
+
+
+}
+
+
+
+
+
+
+
+
+*/
