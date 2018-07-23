@@ -1,6 +1,6 @@
 /*
 Problem : Knights Tour
-Method : Backtrack
+Method : Backtracking
 T(C) = 
 
 
