@@ -20,3 +20,35 @@ ALgorithm to find if the sum N is possible from the subset { } 0f m numbers usin
 
 
 """
+
+
+
+
+
+
+N=8
+a= [3,4,5,1,2]
+
+mat =[ [0]*(N+1) for i in range(len(a)+1)]
+
+#mat= [row for i in range(0,(N))]
+
+for i in range(1,len(a)+1):
+    mat[i][0]=a[i-1]
+
+for i in range(1,N+1):
+    mat[0][i]=mat[0][i-1]+1
+
+
+for i in range(1,N+1):
+    for j in range(1,len(a)):
+
+        if a[i-1]<mat[0][i-1]:
+            mat[i][j]=mat[i-1][j-i]
+
+
+
+print(mat)
+
+
+
