@@ -23,11 +23,12 @@ def notprime(number):
 if __name__=="__main__":
     # no= int(input())
     no = 11
-    with open("storage_array.txt", "w") as f:
-        storage = pickle.loads(f)
-
+    #with open("storage_array.txt", "w") as f:
+    #    storage = pickle.loads(f)
+    storage=[]
     if (len(storage) > no+1):
-        print(storage[no][2])
+        #print(storage[no][2])
+        pass
     else:
         storage = []
         storage.append((1, 1))
@@ -63,8 +64,8 @@ if __name__=="__main__":
             else:
                 number+=1
 
-        with open("storage_array.txt","w") as f:
-            pickle.dumps(storage,f)
+        #with open("storage_array.txt","w") as f:
+        #    pickle.dumps(storage,f)
 
         #print(i-1,number-1)
 
