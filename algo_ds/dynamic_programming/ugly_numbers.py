@@ -3,12 +3,19 @@
 Given n find the nth ugly numbers.
 """
 
+def isprime(number):
+    for i in range(2,number):
+        if number%i ==0:
+            return False
+    return True
+
 def notprime(number):
     for j in range(6, number-1):
-        if number % j == 0:
-            print("false")
-            return False
-    print("true")
+        if isprime(j):
+            if number % j == 0:
+               # print("false")
+                return False
+   # print("true")
     return True
 
 
@@ -31,7 +38,7 @@ if __name__=="__main__":
     i=6
     while i <= no :
 
-        if (number %2 == 0) or (number%3==0) or (number%5 ==0) and notprime(number):
+        if ((number %2 == 0) or (number%3==0) or (number%5 ==0)) and notprime(number):
             print(i, number)
             i+=1
             number+=1
