@@ -14,7 +14,7 @@ int sorter(vector<int> & arr, int low,int high)
 	
 	while(i<j)
 	{
-		while(arr[i]<=pe)
+		while(arr[i]<pe)
 		{
 			i++;
 		}
@@ -32,10 +32,10 @@ int sorter(vector<int> & arr, int low,int high)
 	}
 	
 	
-	arr[low]=arr[i];
-	arr[i]=pe;
+	arr[low]=arr[j];
+	arr[j]=pe;
 	
-	return i;
+	return j;
 }
 
 void q_sort(vector <int>&arr,int low,int high)
@@ -43,10 +43,14 @@ void q_sort(vector <int>&arr,int low,int high)
 	if(low<high)
 	{
 		int pivot=sorter(arr,low,high);
+		cout<<"\npivot"<<pivot<<" "<<arr[pivot];
+	
 		q_sort(arr,low,pivot-1);
 		q_sort(arr,pivot+1,high);
 		
 	}
+		for(auto i:arr)
+			cout<<" ";
 	
 }
 
@@ -56,6 +60,10 @@ int main() {
 	vector<int> arr({12,45,2,34,21,87,9,6});
 	
 	q_sort(arr,0,arr.size()-1);
+	cout<<"\n";
+	for(auto i:arr)
+		cout<<i<<" ";
+
 	return 0;
 	
 	
