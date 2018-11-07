@@ -12,7 +12,7 @@ int sorter(vector<int> & arr, int low,int high)
 	int j=high;
 	int temp;
 	
-	while(i<j)
+	while(i<=j)
 	{
 		while(arr[i]<pe)
 		{
@@ -32,8 +32,6 @@ int sorter(vector<int> & arr, int low,int high)
 		j--;
 		}
 	}
-	
-	
 	arr[low]=arr[j];
 	arr[j]=pe;
 	
