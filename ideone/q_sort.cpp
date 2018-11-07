@@ -19,16 +19,18 @@ int sorter(vector<int> & arr, int low,int high)
 			i++;
 		}
 		
-		while(arr[j]>=pe)
+		while(arr[j]>pe)
 		{
 			j--;
 		}
-		
+		if(i<j)
+		{
 		temp=arr[i];
 		arr[i]=arr[j];
 		arr[j]=temp;
 		i++;
 		j--;
+		}
 	}
 	
 	
