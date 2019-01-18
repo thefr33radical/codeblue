@@ -3,8 +3,6 @@
 # Script to convert nested json object to Dataframe
 # Script to convert nested json object to CSV
 
-### Contributors : Thefreeradical, Mahendra
-
 ********************************************************************************
 
 ## Notes
