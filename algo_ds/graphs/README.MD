@@ -12,6 +12,7 @@ Jhonsons Algorithm |  All pair shortest path| | |
 A* Algorithm |  | | |
 Page Rank |  | | |
 Kosraju Algorithm |  | | |
+Ford-Fulkerson Algorithm | Maximum Flow Problem  | | |
 .  |    |   |  |  |
 Misc |  | | |
 
