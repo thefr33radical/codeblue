@@ -12,6 +12,8 @@ Jhonsons Algorithm |  All pair shortest path| | |
 A* Algorithm |  | | |
 Page Rank |  | | |
 Kosraju Algorithm |  | | |
+| |  | | |
+Misc |  | | |
 
 
 
