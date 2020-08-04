@@ -13,7 +13,8 @@ A* Algorithm |  | | |
 Page Rank |  | | |
 Kosraju Algorithm |  | | |
 Ford-Fulkerson Algorithm | Maximum Flow Problem  | | |
-.  |    |   |  |  |
+Karger’s algorithm | Minimum Cut | | |
+.  |  .  | .  | . | . |
 Misc |  | | |
 
 
