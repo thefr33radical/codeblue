@@ -1,3 +1,0 @@
-/* 
-KMP in Java
-*/

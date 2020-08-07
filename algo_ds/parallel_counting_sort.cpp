@@ -1,4 +1,0 @@
-/*
-Thoughts on parallelizing the counting sort algorithm.
-
-*/
