@@ -1,0 +1,4 @@
+
+#get the maximum value in  a dciionary using lamba function
+print(max(dct.keys(), key=(lambda k: dct[k])))
+
