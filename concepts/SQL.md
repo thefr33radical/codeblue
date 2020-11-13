@@ -5,6 +5,9 @@
 * [ Pivot Function ](https://codingsight.com/pivot-tables-in-mysql/)
 
 
-### Revesion 
+### Revision 
 * [Link](https://www.interviewbit.com/sql-interview-questions/)
 * [Link]( https://www.techbeamers.com/sql-query-questions-answers-for-practice/)
+
+#### Joins
+<img src="https://miro.medium.com/max/966/0*Mu_d-mJMmaVX-j0P> </img>
