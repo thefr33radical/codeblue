@@ -10,4 +10,4 @@
 * [Link]( https://www.techbeamers.com/sql-query-questions-answers-for-practice/)
 
 #### Joins
-* [ Different Join Types](https://miro.medium.com/max/966/0*Mu_d-mJMmaVX-j0P>)
+* [ Different Join Types](https://miro.medium.com/max/966/0*Mu_d-mJMmaVX-j0P)
