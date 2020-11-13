@@ -10,4 +10,7 @@
 * [Link]( https://www.techbeamers.com/sql-query-questions-answers-for-practice/)
 
 #### Joins
-<img src="https://miro.medium.com/max/966/0*Mu_d-mJMmaVX-j0P> </img>
+<p align="center">
+  <img src=""https://miro.medium.com/max/966/0*Mu_d-mJMmaVX-j0P>" width="350" title="hover text">
+  <img src=""https://miro.medium.com/max/966/0*Mu_d-mJMmaVX-j0P>" width="350" alt="accessibility text">
+</p> 
