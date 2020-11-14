@@ -15,6 +15,10 @@ mysql> exit;
 
 $ service mysql restart
 
+# For snap installation
+$sudo snap connect mysql-workbench-community:password-manager-service :password-manager-service
+
+
 ~~~
 * [window functions 1](https://learnsql.com/blog/sql-window-functions-examples/)
 * [window functions 2](https://towardsdatascience.com/intro-to-window-functions-in-sql-23ecdc7c1ceb)
