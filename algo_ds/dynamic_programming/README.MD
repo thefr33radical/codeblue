@@ -1,6 +1,6 @@
 
 |Name| Description | T(C) | S(C) | Problem
-|--------|:----------:|:-------:|:----------:|--------
+|--------|:----------:|:--------:|:-------------:|--------
 |Min Cost Path | min distance in a cost matrix from start to end | O(n)^2 | O(n) ^2 | Link
 | Longest Common Subsequence | LCS in two strings | O(n)^2 | O(n) ^2 | Link
 | Subset sum | Given a total,is this subset possible subset elements | O(n)^2 | O(n) ^2 | Link
