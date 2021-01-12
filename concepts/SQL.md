@@ -25,6 +25,7 @@ $sudo snap connect mysql-workbench-community:password-manager-service :password-
 * [window functions 3](https://learnsql.com/blog/sql-window-functions-examples/)
 * [sqlserver window](https://www.sqlservertutorial.net/sql-server-window-functions/)
 * [ Pivot Function ](https://codingsight.com/pivot-tables-in-mysql/)
+* https://www.w3resource.com/mysql/mysql-functions-and-operators.php
 
 
 ### Practice Problems
