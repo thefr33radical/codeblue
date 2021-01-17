@@ -18,6 +18,7 @@ $ service mysql restart
 # For snap installation
 $sudo snap connect mysql-workbench-community:password-manager-service :password-manager-service
 
+* https://www.geeksforgeeks.org/introduction-of-b-tree-2/
 
 ~~~
 * [window functions 1](https://learnsql.com/blog/sql-window-functions-examples/)
