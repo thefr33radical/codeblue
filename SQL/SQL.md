@@ -28,6 +28,7 @@ $sudo snap connect mysql-workbench-community:password-manager-service :password-
 * https://www.geeksforgeeks.org/introduction-of-b-tree-2/
 
 ~~~
+
 * [window functions 1](https://learnsql.com/blog/sql-window-functions-examples/)
 * [window functions 2](https://towardsdatascience.com/intro-to-window-functions-in-sql-23ecdc7c1ceb)
 * [window functions 3](https://learnsql.com/blog/sql-window-functions-examples/)
@@ -42,4 +43,6 @@ $sudo snap connect mysql-workbench-community:password-manager-service :password-
 
 #### Joins
 * [ Different Join Types](https://miro.medium.com/max/966/0*Mu_d-mJMmaVX-j0P)
+
+#### POSTGRES [Link](https://media.licdn.com/dms/image/v2/D4D22AQF8-yw6fRXhkw/feedshare-shrink_800/feedshare-shrink_800/0/1727379958393?e=1730332800&v=beta&t=1HL65EQbRzfaz9r5kUAUG9FJCTC0zMvQIYURGZO2v3o)
 
