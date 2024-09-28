@@ -23,5 +23,6 @@
 #### MONGODB -
 #### SQL-SERVER -
 #### SSIS -
-#### 
+#### REDSHIFT -
+#### REDIS - 
 
