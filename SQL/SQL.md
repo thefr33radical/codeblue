@@ -19,7 +19,7 @@
 * [Link](https://www.c-sharpcorner.com/article/most-asked-sql-queries-in-interview-questions/)
 
 
-#### POSTGRES  - [Link](https://media.licdn.com/dms/image/v2/D4D22AQF8-yw6fRXhkw/feedshare-shrink_800/feedshare-shrink_800/0/1727379958393?e=1730332800&v=beta&t=1HL65EQbRzfaz9r5kUAUG9FJCTC0zMvQIYURGZO2v3o)
+#### POSTGRES  - [Link 1](https://www.postgresql.org/docs/8.4/index.html) [Link 2](https://media.licdn.com/dms/image/v2/D4D22AQF8-yw6fRXhkw/feedshare-shrink_800/feedshare-shrink_800/0/1727379958393?e=1730332800&v=beta&t=1HL65EQbRzfaz9r5kUAUG9FJCTC0zMvQIYURGZO2v3o)
 #### MONGODB -
 #### SQL-SERVER -
 #### SSIS -
