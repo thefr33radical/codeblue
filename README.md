@@ -33,6 +33,7 @@
 Feel Free to use and Quote "thefr33radical" if it comes in handy.
 
 ### Certifications
+[Link 1](https://github.com/cloudcommunity/Free-Certifications?tab=readme-ov-file)
 1. Databricks spark
 2. AWS Sol Architect I
 3. Kafka CCDAK
