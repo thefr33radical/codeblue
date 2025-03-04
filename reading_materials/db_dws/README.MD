@@ -17,6 +17,8 @@
 * [Link]( https://www.techbeamers.com/sql-query-questions-answers-for-practice/)
 * [Link](https://artoftesting.com/sql-queries-for-interview)
 * [Link](https://www.c-sharpcorner.com/article/most-asked-sql-queries-in-interview-questions/)
+* [Link](https://www.namastesql.com/coding-problems)
+* [Link](https://platform.stratascratch.com/coding?code_type=1)
 
 
 #### POSTGRES  - [Documetation](https://www.postgresql.org/docs/8.4/index.html) |  [Link 2](https://media.licdn.com/dms/image/v2/D4D22AQF8-yw6fRXhkw/feedshare-shrink_800/feedshare-shrink_800/0/1727379958393?e=1730332800&v=beta&t=1HL65EQbRzfaz9r5kUAUG9FJCTC0zMvQIYURGZO2v3o)
