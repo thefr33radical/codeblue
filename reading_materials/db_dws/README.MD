@@ -110,3 +110,50 @@ The Best Interview Prep Playlist: https://lnkd.in/gZj72Q_2
 #### REDSHIFT -
 #### REDIS - 
 
+
+### Dive in and take your data engineering game to the next level!
+
+1. data-engineer-handbook : Zach Wilson DataExpert.io
+https://lnkd.in/gvJr8QBW
+
+2. data-engineering-zoomcamp  : Alexey Grigorev DataTalksClub
+https://lnkd.in/gSZxYdKA
+
+3. The Data Engineering Cookbook - Andreas Kretz Learn Data Engineering
+https://lnkd.in/guktWNiA
+
+4. awesome-data-engineering : Igor Barinov
+https://lnkd.in/gTiF-ksK
+
+5. Data Engineer Roadmap : datastack.tv
+ https://lnkd.in/gsQBRivw
+ 
+6. Data Engineering HowTo : Adylzhan Khashtamov
+https://lnkd.in/g8tDmiqE
+
+7. Data Engineering Practice : Daniel Beach 
+https://lnkd.in/gsFVqxqP
+
+8. Data Engineering Wiki : Data Engineering
+https://lnkd.in/gVUUfu2Y
+
+9. Pyspark Example Project : Alex Ioannides, PhD
+https://lnkd.in/g-T_ZqXu
+
+10. Awesome Open Source Data Engineering : Gunnar Morling
+https://lnkd.in/gXgWTQ5C
+
+11. Data-Engineer-Nanodegree-Projects-Udacity : Amir KROUDIR
+https://lnkd.in/g9Z8eQ7Y
+
+12. google-data-engineering-coursera : Steven Black
+https://lnkd.in/gF9mMDJU
+
+13. datacamp-Data-Engineer-with-Python-course : Franco Ortiz
+https://lnkd.in/gRb5_5Ep
+
+14. data-engineer-portfolio : Anh Tuan Hoang
+https://lnkd.in/gm3VDFVB
+
+15. Data-Engineering-Project-with-HDFS-and-Kafka : Ahmet Furkan DEMIR
+https://lnkd.in/gkw4wYSC
